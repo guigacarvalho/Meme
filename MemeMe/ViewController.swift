@@ -14,7 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var memeImage: UIImageView!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
     var memes = [Meme]()
 
