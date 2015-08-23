@@ -9,16 +9,9 @@
 import Foundation
 import UIKit
 
-class Meme : NSObject {
+struct Meme {
     var topText:String = ""
     var bottomText:String = ""
     var originalImage:UIImage
     var memedImage:UIImage
-    
-    init(topText:String, bottomText:String, image:UIImage, memedImage:UIImage) {
-        self.bottomText = ""
-        self.topText = ""
-        self.originalImage = image
-        self.memedImage = memedImage
-    }
 }
