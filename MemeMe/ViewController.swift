@@ -45,13 +45,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(picker, animated: true, completion: nil)
     }
     @IBAction func shareMeme(sender: AnyObject) {
-        self.memes.append(self.save())
+        memes.append(self.save())
         let image:UIImage = memes[memes.endIndex - 1].memedImage
         let shareViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
@@ -77,18 +77,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let picker:UIImagePickerController = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(picker, animated: true, completion: nil)
+        presentViewController(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
 
-        self.memeImage.image = image
-        self.shareButton.enabled = true
-        self.dismissViewControllerAnimated(true, completion: nil)
+        memeImage.image = image
+        shareButton.enabled = true
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -102,10 +102,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification){
         var keyboardHeight = getKeyboardHeight(notification)
-        self.view.frame.origin.y = -(keyboardHeight)
+        view.frame.origin.y = -(keyboardHeight)
     }
     func keyboardWillHide(notification: NSNotification){
-        self.view.frame.origin.y = 0.0
+        view.frame.origin.y = 0.0
     }
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
@@ -125,7 +125,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         hideBarsForPic()
         
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame,
+        view.drawViewHierarchyInRect(self.view.frame,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
@@ -135,11 +135,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     func hideBarsForPic() {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         toolBar.hidden = true
     }
     func showBarsAfterPic() {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         toolBar.hidden = false
         
     }
