@@ -80,9 +80,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.navigationController?.popToRootViewControllerAnimated(true)
         } )
         
-
-        
-        
     }
     @IBAction func takeAPicture(sender: AnyObject) {
         let picker:UIImagePickerController = UIImagePickerController()
@@ -111,8 +108,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(notification: NSNotification){
-        var keyboardHeight = getKeyboardHeight(notification)
-        view.frame.origin.y = -(keyboardHeight)
+        if (!topTextField.isFirstResponder()) {
+            var keyboardHeight = getKeyboardHeight(notification)
+            view.frame.origin.y = -(keyboardHeight)
+        }
     }
     func keyboardWillHide(notification: NSNotification){
         view.frame.origin.y = 0.0
