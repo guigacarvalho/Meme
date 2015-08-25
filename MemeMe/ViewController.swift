@@ -66,17 +66,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let picker:UIImagePickerController = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(picker, animated: true, completion: nil)
+        presentViewController(picker, animated: true, completion: nil)
     }
     @IBAction func shareMeme(sender: AnyObject) {
         var meme = self.save()
-        let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
-        let image:UIImage = appDelegate.memes[appDelegate.memes.endIndex - 1].memedImage
+        let image:UIImage = meme.memedImage
         let shareViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
-        presentViewController(shareViewController, animated: false, completion: nil)
+        presentViewController(shareViewController, animated: false, completion: { () -> Void in
+            let object = UIApplication.sharedApplication().delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(meme)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        } )
+        
+
+        
         
     }
     @IBAction func takeAPicture(sender: AnyObject) {
@@ -87,7 +92,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-
         memeImage.image = image
         shareButton.enabled = true
         dismissViewControllerAnimated(true, completion: nil)
