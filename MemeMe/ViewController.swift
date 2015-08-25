@@ -16,7 +16,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
-    var memes = [Meme]()
+    
+    var memes: [Meme]!
+    
+    
 
     // Styles for the meme text
     let memeTextAttributes = [
@@ -66,8 +69,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(picker, animated: true, completion: nil)
     }
     @IBAction func shareMeme(sender: AnyObject) {
-        memes.append(self.save())
-        let image:UIImage = memes[memes.endIndex - 1].memedImage
+        var meme = self.save()
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        let image:UIImage = appDelegate.memes[appDelegate.memes.endIndex - 1].memedImage
         let shareViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
         presentViewController(shareViewController, animated: false, completion: nil)
