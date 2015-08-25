@@ -43,7 +43,10 @@ class MemesListViewController:UIViewController, UITableViewDataSource, UITableVi
         cell.detailTextLabel?.text = meme.bottomText
         return cell
     }
-//    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-//        return
-//    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let memeVC = storyboard?.instantiateViewControllerWithIdentifier("addMeme") as! ViewController
+        memeVC.memeId = indexPath.row
+        navigationController?.pushViewController(memeVC, animated: true)
+        navigationController?.navigationBarHidden = true
+    }
 }

@@ -18,6 +18,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var toolBar: UIToolbar!
     
     var memes: [Meme]!
+    var memeId:Int!
     
     
 
@@ -31,10 +32,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (memeId == nil) {
         // Setting up the view
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+        } else {
+            let object = UIApplication.sharedApplication().delegate
+            let appDelegate = object as! AppDelegate
+            memes = appDelegate.memes
+            topTextField.text = memes[memeId].topText
+            bottomTextField.text = memes[memeId].bottomText
+            memeImage.image = memes[memeId].originalImage
+            
+        }
+        
+        
         topTextField.delegate = self
         bottomTextField.delegate = self
         topTextField.defaultTextAttributes = memeTextAttributes
@@ -43,6 +55,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.textAlignment = NSTextAlignment.Center
         subscribeToKeyboardNotifications()
         shareButton.enabled = false
+
 
     }
 
@@ -74,14 +87,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var meme = self.save()
         let image:UIImage = meme.memedImage
         let shareViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        
-        presentViewController(shareViewController, animated: false, completion: { () -> Void in
-            let object = UIApplication.sharedApplication().delegate
-            let appDelegate = object as! AppDelegate
-            appDelegate.memes.append(meme)
+        presentViewController(shareViewController, animated: false, completion:nil)
+        shareViewController.completionWithItemsHandler = {(activityType: String!, completed: Bool, returnedItems: [AnyObject]!, error: NSError!) in
+            if (completed) {
+                let object = UIApplication.sharedApplication().delegate
+                let appDelegate = object as! AppDelegate
+                appDelegate.memes.append(meme)
+            }
+            println("Shared video activity: \(activityType)")
             self.navigationController?.popToRootViewControllerAnimated(true)
-        } )
-        
+        }
+
     }
     @IBAction func takeAPicture(sender: AnyObject) {
         let picker:UIImagePickerController = UIImagePickerController()

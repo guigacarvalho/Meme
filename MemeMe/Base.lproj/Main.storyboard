@@ -73,7 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Table View" id="qcr-Rt-FAL"/>
                     <connections>
-                        <outlet property="memesTableView" destination="3h6-Xi-5Br" id="Lbh-Pl-ItG"/>
+                        <outlet property="memesTableView" destination="3h6-Xi-5Br" id="ytT-dZ-JSp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mi-jq-R6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="t11-EC-aDO" kind="relationship" relationship="rootViewController" id="krj-r2-t1W"/>
+                        <segue destination="t11-EC-aDO" kind="relationship" relationship="rootViewController" id="yEm-CY-iFA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqx-n1-NEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,7 +138,7 @@
                     <navigationItem key="navigationItem" title="Grid View" id="GMC-ok-Rxy"/>
                     <connections>
                         <outlet property="memeFlowLayout" destination="Ev3-wD-nqR" id="sHa-2f-ybP"/>
-                        <outlet property="memesCollectionView" destination="SBR-4I-5ie" id="lv3-Y7-MH7"/>
+                        <outlet property="memesCollectionView" destination="SBR-4I-5ie" id="DUi-h0-mkw"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQL-fe-Uvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,8 +245,8 @@
                             <mask key="constraints">
                                 <exclude reference="BJc-yS-me7"/>
                                 <exclude reference="LFB-L3-qjp"/>
-                                <exclude reference="bkY-zK-X8c"/>
                                 <exclude reference="2ji-jK-2b3"/>
+                                <exclude reference="bkY-zK-X8c"/>
                             </mask>
                         </variation>
                     </view>
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acn-e1-vMK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="1123"/>
+            <point key="canvasLocation" x="2096" y="1231"/>
         </scene>
     </scenes>
 </document>

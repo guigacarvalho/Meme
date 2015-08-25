@@ -48,11 +48,13 @@ class MemeCollectionViewController:UICollectionViewController, UICollectionViewD
         item.memeImageView.image = meme.memedImage
         return item
     }
-    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let memeVC = storyboard?.instantiateViewControllerWithIdentifier("addMeme") as! ViewController
+        memeVC.memeId = indexPath.row        
+        navigationController?.pushViewController(memeVC, animated: true)
         
     }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print (memes.count)
         return memes.count
     }
 }
