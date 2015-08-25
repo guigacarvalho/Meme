@@ -10,6 +10,7 @@ import UIKit
 
 class MemesListViewController:UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var memesTableView: UITableView!
     var memes: [Meme]!
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -17,7 +18,7 @@ class MemesListViewController:UIViewController, UITableViewDataSource, UITableVi
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
-        print (memes.count)
+        memesTableView.reloadData()
     }
     
     override func viewDidLoad() {

@@ -9,6 +9,7 @@
 import UIKit
 
 class MemeCollectionViewController:UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet var memesCollectionView: UICollectionView!
     var memes: [Meme]!
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -16,7 +17,7 @@ class MemeCollectionViewController:UICollectionViewController, UICollectionViewD
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
-        print (memes.count)
+        memesCollectionView.reloadData()
     }
     
     @IBOutlet weak var memeFlowLayout: UICollectionViewFlowLayout!
