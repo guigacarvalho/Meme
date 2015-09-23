@@ -190,13 +190,13 @@
                                     <rect key="frame" x="250" y="350" width="100" height="100"/>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oht-3c-6Mt">
-                                <rect key="frame" x="16" y="449" width="568" height="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oht-3c-6Mt">
+                                <rect key="frame" x="18" y="533" width="560" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPl-Tf-ELy">
-                                <rect key="frame" x="16" y="154" width="568" height="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPl-Tf-ELy">
+                                <rect key="frame" x="20" y="50" width="560" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -239,18 +239,20 @@
                             <constraint firstItem="o8J-kh-BAe" firstAttribute="top" secondItem="dB8-IO-Eko" secondAttribute="bottom" id="bkY-zK-X8c"/>
                             <constraint firstItem="oht-3c-6Mt" firstAttribute="top" secondItem="dB8-IO-Eko" secondAttribute="bottom" constant="-151" id="eHR-Uo-7wI"/>
                             <constraint firstItem="dB8-IO-Eko" firstAttribute="top" secondItem="jOw-I8-6n8" secondAttribute="bottom" constant="-20" id="gGG-N8-pP1"/>
-                            <constraint firstItem="oht-3c-6Mt" firstAttribute="centerX" secondItem="dB8-IO-Eko" secondAttribute="centerX" constant="2.5" id="hfk-JS-GHk"/>
+                            <constraint firstItem="oht-3c-6Mt" firstAttribute="centerX" secondItem="dB8-IO-Eko" secondAttribute="centerX" id="hfk-JS-GHk"/>
                             <constraint firstItem="dB8-IO-Eko" firstAttribute="top" secondItem="jOw-I8-6n8" secondAttribute="bottom" constant="-20" id="iiJ-4l-o9l"/>
                             <constraint firstItem="dB8-IO-Eko" firstAttribute="trailing" secondItem="Syi-N3-eSY" secondAttribute="trailingMargin" constant="16" id="ruB-tz-kFH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dB8-IO-Eko" secondAttribute="trailing" constant="-16" id="sp1-8e-QiA"/>
+                            <constraint firstItem="oht-3c-6Mt" firstAttribute="bottom" secondItem="dB8-IO-Eko" secondAttribute="bottom" constant="-50" id="urT-e5-fad"/>
                             <constraint firstItem="SWd-bS-4Rf" firstAttribute="top" secondItem="o8J-kh-BAe" secondAttribute="bottom" id="wHY-K2-t25"/>
                             <constraint firstItem="XPl-Tf-ELy" firstAttribute="centerX" secondItem="dB8-IO-Eko" secondAttribute="centerX" constant="2.5" id="x2u-W0-scf"/>
-                            <constraint firstItem="XPl-Tf-ELy" firstAttribute="top" secondItem="dB8-IO-Eko" secondAttribute="top" constant="154" id="yaR-m0-NAJ"/>
+                            <constraint firstItem="XPl-Tf-ELy" firstAttribute="top" secondItem="dB8-IO-Eko" secondAttribute="top" constant="50" id="yaR-m0-NAJ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="BJc-yS-me7"/>
                                 <exclude reference="LFB-L3-qjp"/>
+                                <exclude reference="eHR-Uo-7wI"/>
                                 <exclude reference="2ji-jK-2b3"/>
                                 <exclude reference="bkY-zK-X8c"/>
                             </mask>
