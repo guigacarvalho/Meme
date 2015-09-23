@@ -27,7 +27,7 @@ class MemesListViewController:UIViewController, UITableViewDataSource, UITableVi
     }
     
     func addBarButtonItemClicked() {
-        let addMemeVC = storyboard?.instantiateViewControllerWithIdentifier("addMeme") as! ViewController
+        let addMemeVC = storyboard?.instantiateViewControllerWithIdentifier("addMeme") as! MemeEditorViewController
         navigationController?.pushViewController(addMemeVC, animated: true)
     }
     

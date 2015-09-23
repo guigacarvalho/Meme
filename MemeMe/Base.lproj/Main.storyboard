@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="-182" y="1365"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="S3j-p7-eTZ">
             <objects>
-                <viewController storyboardIdentifier="addMeme" id="PHn-7Y-87L" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addMeme" id="PHn-7Y-87L" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jOw-I8-6n8"/>
                         <viewControllerLayoutGuide type="bottom" id="SWd-bS-4Rf"/>
