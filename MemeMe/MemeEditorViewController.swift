@@ -86,9 +86,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
                 let object = UIApplication.sharedApplication().delegate
                 let appDelegate = object as! AppDelegate
                 appDelegate.memes.append(meme)
+                self.navigationController?.popToRootViewControllerAnimated(true)
             }
-            print ("Shared video activity: \(activityType)")
-            self.navigationController?.popToRootViewControllerAnimated(true)
         }
 
     }
