@@ -10,6 +10,7 @@
 		793FDF7D1B8B6EB3001AA961 /* MemesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FDF7C1B8B6EB3001AA961 /* MemesListViewController.swift */; };
 		793FDF7F1B8BEA22001AA961 /* MemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FDF7E1B8BEA22001AA961 /* MemeCollectionViewController.swift */; };
 		793FDF811B8BEA47001AA961 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FDF801B8BEA47001AA961 /* MemeCollectionViewCell.swift */; };
+		7965FC241BB23BDD0008BADA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965FC231BB23BDD0008BADA /* DetailView.swift */; settings = {ASSET_TAGS = (); }; };
 		7987F3471B86ED2700BB54DB /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987F3461B86ED2700BB54DB /* Meme.swift */; };
 		79F736EC1B85920100DC51ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F736EB1B85920100DC51ED /* AppDelegate.swift */; };
 		79F736EE1B85920100DC51ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F736ED1B85920100DC51ED /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		793FDF7C1B8B6EB3001AA961 /* MemesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemesListViewController.swift; sourceTree = "<group>"; };
 		793FDF7E1B8BEA22001AA961 /* MemeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewController.swift; sourceTree = "<group>"; };
 		793FDF801B8BEA47001AA961 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		7965FC231BB23BDD0008BADA /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7987F3461B86ED2700BB54DB /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		79F736E61B85920100DC51ED /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F736EA1B85920100DC51ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				79F736F21B85920100DC51ED /* Images.xcassets */,
 				79F736F41B85920100DC51ED /* LaunchScreen.xib */,
 				79F736E91B85920100DC51ED /* Supporting Files */,
+				7965FC231BB23BDD0008BADA /* DetailView.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -168,7 +171,8 @@
 		79F736DE1B85920100DC51ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Guilherme Carvalho";
 				TargetAttributes = {
 					79F736E51B85920100DC51ED = {
@@ -227,6 +231,7 @@
 				793FDF811B8BEA47001AA961 /* MemeCollectionViewCell.swift in Sources */,
 				7987F3471B86ED2700BB54DB /* Meme.swift in Sources */,
 				79F736EE1B85920100DC51ED /* ViewController.swift in Sources */,
+				7965FC241BB23BDD0008BADA /* DetailView.swift in Sources */,
 				793FDF7F1B8BEA22001AA961 /* MemeCollectionViewController.swift in Sources */,
 				793FDF7D1B8B6EB3001AA961 /* MemesListViewController.swift in Sources */,
 				79F736EC1B85920100DC51ED /* AppDelegate.swift in Sources */,
@@ -292,6 +297,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -360,6 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "gcarvalho.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -370,6 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "gcarvalho.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -388,6 +396,7 @@
 				);
 				INFOPLIST_FILE = MemeMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "gcarvalho.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemeMe.app/MemeMe";
 			};
@@ -403,6 +412,7 @@
 				);
 				INFOPLIST_FILE = MemeMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "gcarvalho.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemeMe.app/MemeMe";
 			};

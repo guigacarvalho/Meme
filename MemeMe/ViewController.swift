@@ -20,8 +20,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var memes: [Meme]!
     var memeId:Int!
     
-    
-
     // Styles for the meme text
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -84,17 +82,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         presentViewController(picker, animated: true, completion: nil)
     }
     @IBAction func shareMeme(sender: AnyObject) {
-        var meme = self.save()
+        let meme = self.save()
         let image:UIImage = meme.memedImage
         let shareViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         presentViewController(shareViewController, animated: false, completion:nil)
-        shareViewController.completionWithItemsHandler = {(activityType: String!, completed: Bool, returnedItems: [AnyObject]!, error: NSError!) in
+        shareViewController.completionWithItemsHandler = {(activityType: String?, completed: Bool, returnedItems: [AnyObject]?, error: NSError?) in
             if (completed) {
                 let object = UIApplication.sharedApplication().delegate
                 let appDelegate = object as! AppDelegate
                 appDelegate.memes.append(meme)
             }
-            println("Shared video activity: \(activityType)")
+            print ("Shared video activity: \(activityType)")
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
 
@@ -127,7 +125,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification){
         if (!topTextField.isFirstResponder()) {
-            var keyboardHeight = getKeyboardHeight(notification)
+            let keyboardHeight = getKeyboardHeight(notification)
             view.frame.origin.y = -(keyboardHeight)
         }
     }
@@ -172,7 +170,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     func save() -> Meme {
         //Create the meme
-        var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: memeImage.image!, memedImage: generateMemedImage())
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImage.image!, memedImage: generateMemedImage())
         return meme
     }
 

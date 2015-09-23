@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCollectionViewController:UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MemeCollectionViewController:UICollectionViewController  {
     @IBOutlet var memesCollectionView: UICollectionView!
     var memes: [Meme]!
     override func viewWillAppear(animated: Bool) {
@@ -27,7 +27,7 @@ class MemeCollectionViewController:UICollectionViewController, UICollectionViewD
         let space: CGFloat = 0.0
         let flowWidth = (self.view.frame.size.width) / 3.0
         
-        let flowHeight = (self.view.frame.size.height) / 3.0
+//        let flowHeight = (self.view.frame.size.height) / 3.0
         memeFlowLayout.minimumLineSpacing = space
         memeFlowLayout.minimumInteritemSpacing = space
         memeFlowLayout.itemSize = CGSizeMake(flowWidth, flowWidth)
@@ -42,9 +42,9 @@ class MemeCollectionViewController:UICollectionViewController, UICollectionViewD
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var item = collectionView.dequeueReusableCellWithReuseIdentifier("memeCell", forIndexPath: indexPath) as! MemeCollectionViewCell
+        let item = collectionView.dequeueReusableCellWithReuseIdentifier("memeCell", forIndexPath: indexPath) as! MemeCollectionViewCell
         print(indexPath.row)
-        var meme = memes[indexPath.row]
+        let meme = memes[indexPath.row]
         item.memeImageView.image = meme.memedImage
         return item
     }
