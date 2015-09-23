@@ -24,9 +24,4 @@ class DetailView: UIViewController {
             memes = appDelegate.memes
             memeImage.image = memes[memeId].memedImage
       }
-
-    @IBAction func dismissDetailVC(sender: AnyObject) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
 }

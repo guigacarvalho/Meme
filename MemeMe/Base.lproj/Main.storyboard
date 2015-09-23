@@ -298,22 +298,13 @@
                                     <rect key="frame" x="250" y="350" width="100" height="100"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFp-7u-f6V">
-                                <rect key="frame" x="273" y="550" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="dismissDetailVC:" destination="dEz-qe-0ai" eventType="touchUpInside" id="86b-z8-UZo"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="X8X-JM-w3X" secondAttribute="trailing" constant="-16" id="0NB-5b-EtW"/>
                             <constraint firstAttribute="centerY" secondItem="X8X-JM-w3X" secondAttribute="centerY" id="1DR-GC-Ghx"/>
                             <constraint firstItem="X8X-JM-w3X" firstAttribute="leading" secondItem="EVj-wK-fA1" secondAttribute="leadingMargin" constant="-21" id="9OU-53-yuh"/>
-                            <constraint firstItem="FFp-7u-f6V" firstAttribute="top" secondItem="X8X-JM-w3X" secondAttribute="bottom" constant="-50" id="BU5-Ww-az4"/>
                             <constraint firstItem="MTL-rb-2oL" firstAttribute="top" secondItem="X8X-JM-w3X" secondAttribute="bottom" id="MfO-iE-Sf1"/>
-                            <constraint firstItem="FFp-7u-f6V" firstAttribute="centerX" secondItem="X8X-JM-w3X" secondAttribute="centerX" id="P3W-pz-ATQ"/>
                             <constraint firstItem="X8X-JM-w3X" firstAttribute="trailing" secondItem="EVj-wK-fA1" secondAttribute="trailingMargin" constant="16" id="Yur-pw-NVm"/>
                             <constraint firstItem="X8X-JM-w3X" firstAttribute="top" secondItem="qDv-bm-Ie7" secondAttribute="bottom" constant="-20" id="eGv-uP-jvv"/>
                             <constraint firstAttribute="centerX" secondItem="X8X-JM-w3X" secondAttribute="centerX" id="ndb-OD-D0d"/>
@@ -326,6 +317,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="memeImage" destination="X8X-JM-w3X" id="RNm-x3-3UA"/>
                     </connections>

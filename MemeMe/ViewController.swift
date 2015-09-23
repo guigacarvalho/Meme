@@ -69,11 +69,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
         tabBarController?.tabBar.hidden = false
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     @IBAction func pickAnImage(sender: AnyObject) {
         let picker:UIImagePickerController = UIImagePickerController()
